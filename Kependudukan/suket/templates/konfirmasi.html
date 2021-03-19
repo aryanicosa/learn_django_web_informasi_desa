@@ -1,0 +1,48 @@
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous"> 
+    <!-- Static css -->
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+
+    <title>Cetak</title>
+</head>
+<body class="A4">
+    <!-- Content Body container-->
+    <main class="container mt-4">  
+        <section class="sheet padding-10mm">
+            <table>
+                <thead>
+                    <tr class="head_row">
+                        <td><img class="img_kop" src="{% static 'logo.jpg' %}" alt="logo"></td>
+                        <td>
+                            <h1>Pemerintah Kabupaten Koding</h1>
+                            <h2>Kecamatan Praxis Academy</h2>
+                            <h3>Desa Bima Hacker Village</h3>
+                            <p class="kop">Jalan Menuju Kesuksesan Bersama-sama Bahagia</p>
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <td colspan="2">
+                        <p>Pengajuan anda sudah kami terima dan dokumen yang and abutuhkan akan dikirim melalui email yang saudara masukkan.
+                            Mohon menunggu selama 3 hari kerja, jika sudah melewati 3 hari kerja, silakan hubungi ke admin</p>
+                        <a href="/suket/borang">
+                            <button type="button" class="btn btn-success btn-sm">OK</button>
+                        </a>
+                    </td>
+                </tbody>            
+            </table>
+        </section>
+    </main>
+    <!-- End Content Body -->
+</body>
+
+</html>
+{% endblock %}

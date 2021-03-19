@@ -1,0 +1,104 @@
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous"> 
+    <!-- Static css -->
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+
+    <title>Cetak</title>
+</head>
+<body class="A4">
+    <!-- Content Body container-->
+    <main class="container mt-4">  
+        <section class="sheet padding-10mm">
+            <table>
+                <thead>
+                    <tr class="head_row">
+                        <td><img class="img_kop" src="{% static 'logo.jpg' %}" alt=""></td>
+                        <td>
+                            <h1>Pemerintah Kabupaten Koding</h1>
+                            <h2>Kecamatan Praxis Academy</h2>
+                            <h3>Desa Bima Hacker Village</h3>
+                            <p class="kop">Jalan Menuju Kesuksesan Bersama-sama Bahagia</p>
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="SK" colspan="2">
+                            Surat keterangan {{ data.jenis_surat }}                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding-top: 3pt; text-align:center;" colspan="2">
+                            <p>NO : ..../..../2021</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <p>Yang bertanda tangan dibawah ini adalah Kepala Desa Bima Hacker Village,
+                                Kecamatan Praxis Academy, Kabupaten Koding menerangkan bahwa:</p>
+                        </td>
+                    </tr>
+                    <div >
+                        <tr>
+                            <td class="identitas">
+                                <p>Nama        </p>
+                                <p>NIK         </p>
+                                <p>No Telpon   </p>
+                                <p>Email       </p>
+                                <p>Keperluan   </p>
+                                <p>Alamat      </p>
+                            </td>
+                            <td>
+                                <p>: {{ data.nama }}</p>
+                                <p>: {{ data.nik }}</p>
+                                <p>: {{ data.no_telpon }}</p>
+                                <p>: {{ data.email }}</p>
+                                <p>: {{ data.jenis_surat }}</p>
+                                <p>: {{ data.alamat }}</p>
+                            </td>
+                        <tr>
+                            <td>
+                                
+                            </td>
+                        </tr>
+                    </div>
+                    <tr>
+                        <td colspan="2">
+                            <p>Memang benar yang bersangkutan diatas merupakan warga Desa Bima Hacker Village 
+                               dan surat ini diberikan kepada yang bersangkutan untuk dipergunakan sebaik-baiknya sesuai kebutuhan.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            
+                        </td>
+                        <td>
+                            <p style="text-align: end; padding-right: 50pt; line-height: 0.3;">Yogyakarta, {{ date.day }} {{ month }} {{ date.year }} </p>
+                            <p style="font-weight: bold; text-align: end; padding-right: 50pt;">Kepala Desa Bima Hacker Village</p>
+                            
+                            <img style="float: inherit;width: 200px;margin-left: 340pt;" src="{% static 'ttd.png' %}" alt="">
+                            
+                            <br>
+                            <br>
+                            <p style="font-weight: bold; text-align: end; padding-right: 50pt; text-decoration: underline; line-height: 0;">Jarene Pak Kades, MM.</p>                                  
+                            <p style="font-weight: bold; text-align: end; padding-right: 50pt;"">NIP. 19750203 200005 1 001</p>
+                        </td>
+                    </tr>
+
+                </tbody>            
+            </table>
+        </section>
+    </main>
+    <!-- End Content Body -->
+</body>
+
+</html>
+{% endblock %}

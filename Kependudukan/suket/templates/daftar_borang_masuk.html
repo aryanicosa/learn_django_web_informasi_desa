@@ -1,0 +1,114 @@
+{% extends 'layout.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>Daftar Borang Masuk</h4>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">No.</th>
+                <th scope="col">Nama</th>
+                <th scope="col">NIK</th>
+                <th scope="col">Alamat</th>
+                <th scope="col">No Telpon</th>
+                <th scope="col">Email</th>
+                <th scope="col">jenis</th>
+                <th scope="col">Keterangan</th>
+                <th scope="col" style="width: 10%;">Tindakan</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for dt in data %}
+            <tr>
+                <th scope="row">{{ forloop.counter }}</th>
+                <td>{{ dt.nama }}</td>
+                <td>{{ dt.nik }}</td>
+                <td>{{ dt.alamat }}</td>
+                <td>{{ dt.no_telpon }}</td>
+                <td>{{ dt.email }}</td>
+                <td>{{ dt.jenis_surat }}</td>
+                <td>{{ dt.keterangan_tambahan }}</td>
+                <td>
+                    <!-- Button untuk trigger modal Hapus -->
+                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal{{ dt.id }}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                            <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                        </svg>
+                    </button>
+    
+                    <!-- Modal hapus -->
+                    <div id="myModal{{ dt.id }}" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+                            <!-- konten modal-->
+                            <div class="modal-content">
+                                <!-- heading modal -->
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Konfirmasi</h4>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+                                <!-- body modal -->
+                                <div class="modal-body">
+                                    <p>Anda yakin ingin menghapus?</p>
+                                </div>
+                                <!-- footer modal -->
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                                    <a href="hapus/{{ dt.id }}">  
+                                        <button type="button" class="btn btn-danger">Hapus</button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Modal hapus -->
+    
+                    <!-- Button untuk trigger modal cetak -->
+                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal2{{ dt.id }}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-check-fill" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zm8.854-9.646a.5.5 0 0 0-.708-.708L7.5 7.793 6.354 6.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"/>
+                          </svg>
+                    </button>
+    
+                    <!-- Modal cetak -->
+                    <div id="myModal2{{ dt.id }}" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+                            <!-- konten modal-->
+                            <div class="modal-content">
+                                <!-- heading modal -->
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Validasi</h4>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+                                <!-- body modal -->
+                                <div class="modal-body">
+                                    <p>Data tervalidasi?</p>
+                                </div>
+                                <!-- footer modal -->
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                                    <a href="pdf/{{ dt.id }}">  
+                                        <button type="button" class="btn btn-primary">Konfirmasi</button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Modal cetak -->
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+     
+</body>
+
+</html>
+{% endblock %}

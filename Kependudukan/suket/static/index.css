@@ -1,0 +1,97 @@
+@page { size: A4 }
+
+body {
+    background-color: #f7f7f7;
+  }
+  
+h1 {
+    font-weight:normal;
+    font-size: 16pt;
+    text-align: center;
+    margin-top: 10pt;
+    line-height: 0.7;
+    letter-spacing: 2px;
+}
+
+h2 {
+    font-weight: normal;
+    font-size: 16pt;
+    text-align: center;
+    margin-top: 0%;
+    line-height: 0.7;
+    letter-spacing: 2px;
+}
+
+h3 {
+    font-weight: bold;
+    font-size: 20pt;
+    text-align: center;
+    padding-top: 0%;
+    line-height: 0.8;
+    letter-spacing: 2px;
+}
+
+.kop {
+    text-align: center;
+    line-height: 0.8;
+}
+  
+table {
+    width: 90%;    
+    margin: auto;
+}
+
+.table thead {
+    margin-top: 0%;
+    
+}
+
+.table th {
+    padding: 8px 8px;
+    
+    text-align: center;
+}
+  
+.table td {
+    column-span: 2;
+    padding: 3px 3px;
+    
+}
+  
+.text-center {
+    text-align: center;
+}
+
+.head_row {
+    border-bottom: 4pt double #000000;
+}
+
+.img_kop {
+    height: 150px;
+    /*atas kiri bawah kanan*/
+    padding: 20px 0px 20px 80px;
+    position: relative;
+}
+
+.SK {
+    padding-top: 20pt;
+    text-decoration-line: underline;
+    text-align: center;
+    line-height: 0.7;
+    width: 50%;
+}
+
+.identitas p {
+    text-indent: 70px;
+}
+
+.ttd {
+    height: 30px;
+    position: relative;
+}
+
+.sign {
+    font-size: 30pt;
+    text-align: center;
+    text-align:end;
+}
